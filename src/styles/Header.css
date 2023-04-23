@@ -1,0 +1,63 @@
+.Header {
+  padding: 1rem;
+  padding-right: 5rem;
+  text-align: end;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+}
+
+.Header > div {
+  height: 1rem;
+  background-image: linear-gradient(
+    to right,
+    #e4b8d6,
+    #e4e3b8,
+    #b8e4c5,
+    #b8cde4
+  );
+}
+
+.Header > div:hover {
+  animation-name: gradient-hover;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes gradient-hover {
+  0% {
+    background-image: linear-gradient(
+      to right,
+      #e4b8d6,
+      #e4e3b8,
+      #b8e4c5,
+      #b8cde4
+    );
+  }
+  33% {
+    background-image: linear-gradient(
+      to right,
+      #b8cde4,
+      #e4b8d6,
+      #e4e3b8,
+      #b8e4c5
+    );
+  }
+  66% {
+    background-image: linear-gradient(
+      to right,
+      #b8e4c5,
+      #b8cde4,
+      #e4b8d6,
+      #e4e3b8
+    );
+  }
+  100% {
+    background-image: linear-gradient(
+      to right,
+      #b8cde4,
+      #b8e4c5,
+      #e4e3b8,
+      #e4b8d6
+    );
+  }
+}
