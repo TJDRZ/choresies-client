@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import Header from "./Header";
 import { registerUser, loginUser } from "../utility/auth";
 import "../styles/Login.css";
 
