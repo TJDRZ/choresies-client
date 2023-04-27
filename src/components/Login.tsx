@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import { registerUser, loginUser } from "../utility/auth";
+import "../styles/Login.css";
 
 type LoginProps = {
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
@@ -28,12 +29,8 @@ export default function Login(props: LoginProps) {
   };
 
   return (
-    <main>
-      <Header />
+    <section className="Login">
       <form onSubmit={(e) => submitForm(e)}>
-        <button className="toggle-login" type="button" onClick={toggleLogin}>
-          {newUser ? "Returning User? - Sign-In" : "New User? - Create Account"}
-        </button>
         <h1>{newUser ? "Create Account:" : "Sign-In:"}</h1>
         <input placeholder="Email" type="email" ref={emailRef} required />
         <input
@@ -43,7 +40,10 @@ export default function Login(props: LoginProps) {
           required
         />
         <button type="submit">Submit</button>
+        <button className="toggle-login" type="button" onClick={toggleLogin}>
+          {newUser ? "Returning User? - Sign-In" : "New User? - Create Account"}
+        </button>
       </form>
-    </main>
+    </section>
   );
 }

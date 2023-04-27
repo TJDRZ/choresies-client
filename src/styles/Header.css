@@ -1,8 +1,7 @@
 .Header {
-  padding: 1rem;
-  padding-right: 5rem;
+  align-self: stretch;
+  padding: 1rem 5rem;
   text-align: end;
-  font-family: sans-serif;
   font-size: 1.5rem;
 }
 
@@ -19,7 +18,7 @@
 
 .Header > div:hover {
   animation-name: gradient-hover;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
 
