@@ -2,7 +2,7 @@ import url from "./APIURL";
 
 const registerUser = async (email: string, password: string) => {
   try {
-    const res = await fetch(`${url}/api/`, {
+    const res = await fetch(`${url}/api/person`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -11,7 +11,7 @@ const registerUser = async (email: string, password: string) => {
     });
     const data = await res.json();
     if (data.token) {
-      localStorage.setItem("tone-token-user", data.token);
+      localStorage.setItem("choresies-user", data.token);
     }
     return data;
   } catch (err) {
@@ -22,7 +22,7 @@ const registerUser = async (email: string, password: string) => {
 
 const loginUser = async (email: string, password: string) => {
   try {
-    const res = await fetch(`${url}/api/user/login`, {
+    const res = await fetch(`${url}/api/person/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const loginUser = async (email: string, password: string) => {
     });
     const data = await res.json();
     if (data.token) {
-      localStorage.setItem("tone-token-user", data.token);
+      localStorage.setItem("choresies-user", data.token);
     }
     return data;
   } catch (err) {
@@ -42,7 +42,7 @@ const loginUser = async (email: string, password: string) => {
 
 const getUser = async (token: string) => {
   try {
-    const res = await fetch(`${url}/api/user/current`, {
+    const res = await fetch(`${url}/api/person/current`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
