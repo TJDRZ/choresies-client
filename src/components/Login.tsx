@@ -31,10 +31,10 @@ export default function Login(props: LoginProps) {
     <section className="Login">
       <form onSubmit={(e) => submitForm(e)}>
         <h1>{newUser ? "Create Account:" : "Sign-In:"}</h1>
-        <input placeholder="Email" type="email" ref={emailRef} required />
+        <input type="email" placeholder="Email" ref={emailRef} required />
         <input
-          placeholder="Password"
           type="password"
+          placeholder="Password"
           ref={passwordRef}
           required
         />

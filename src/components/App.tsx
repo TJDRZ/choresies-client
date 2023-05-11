@@ -4,7 +4,7 @@ import Menu from "./Menu";
 import Login from "./Login";
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true); //true for testing Menu
   return (
     <main className="App">
       <Header />
@@ -12,3 +12,4 @@ export default function App() {
     </main>
   );
 }
+//test
