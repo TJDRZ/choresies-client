@@ -6,7 +6,7 @@ export default function Menu() {
   const [chores, setChores] = useState<JSX.Element[]>([]);
   const choreNameRef = useRef<HTMLInputElement | null>(null);
 
-  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (choreNameRef.current) {
       setChores([
@@ -20,7 +20,9 @@ export default function Menu() {
     }
   };
 
-  // need a delete chores
+  const deleteChore = (_id: string) => {
+    setChores([...chores.filter((chore) => chore.props._id !== _id)]);
+  };
 
   return (
     <section className="Menu">
@@ -35,7 +37,12 @@ export default function Menu() {
       </form>
       {chores.map((chore) => (
         <div className="chore-border" key={chore.props._id}>
-          <button className="chore-delete">X</button>
+          <button
+            className="chore-delete"
+            onClick={() => deleteChore(chore.props._id)}
+          >
+            X
+          </button>
           {chore}
         </div>
       ))}
